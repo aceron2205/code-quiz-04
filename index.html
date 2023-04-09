@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=”stylesheet” href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>Coding Quiz Challenge</title>
+    </head>
+    <body>
+        <div class="timer">Time: <span id="time">0</span></div>
+
+        <!-------Start page---->
+        <div id="start-page" class="start">
+            <h1>Coding Quiz Challenge!</h1>
+            <p>Try to answer the following code-related questions within the time limit.
+                Keep in mind that incorrect answers will penalize your score/time 
+                by ten seconds!
+            </p>
+            <button id="button-start"><h4>Start Quiz</h4></button>
+        </div>
+
+        <!-----Quiz Page------>
+        <div id="questions-page" class="hide">
+            <div class="card-body">
+                <h5 id="question"></h5>
+            </div>
+
+            <div id="options">
+                <button id="options1"></button>
+                <button id="options2"></button>
+                <button id="options3"></button>
+                <button id="options4"></button>
+            </div>
+        </div>
+
+
+
+        <!---------Initials page----------->
+        <div id="initial-page" class="hide">
+            <h1>All done!</h1>
+            <p>Your final score is <span id="final-score"></span></p>
+            <label for="initials">Enter initials:</label>
+            <input id="input-initials">
+            <button type="submit" id="btn-initials">Submit</button>
+        </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <script src="questions.json"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
