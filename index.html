@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel=”stylesheet” href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="stylesheet.css"/>
     <title>Coding Quiz Challenge</title>
     </head>
     <body>
@@ -22,19 +22,12 @@
         </div>
 
         <!-----Quiz Page------>
-        <div id="questions-page" class="hide">
-            <div class="card-body">
-                <h5 id="question"></h5>
-            </div>
-
-            <div id="options">
-                <button id="options1"></button>
-                <button id="options2"></button>
-                <button id="options3"></button>
-                <button id="options4"></button>
-            </div>
-        </div>
-
+     <div id="questions-page" class="hide">
+        <h2 id="question-title"></h2>
+        <div id="choices" class="choices"></div>
+        <br>
+        <div id="feedback">Correct!</div>
+      </div>
 
 
         <!---------Initials page----------->
@@ -49,7 +42,7 @@
 
 
         <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
-        <script src="questions.json"></script>
+        <script src="questions1.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
