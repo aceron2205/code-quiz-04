@@ -1,0 +1,15 @@
+#start-page, #questions-page, #score-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+  }
+
+  button {
+    background-color: purple;
+    color: white;
+  }
+  
