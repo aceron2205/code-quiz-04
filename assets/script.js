@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     alert('Your score is now saved :)')
 
-    document.location.href = '/'
+    location.reload();
     
   });
 
