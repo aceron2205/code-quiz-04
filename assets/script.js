@@ -7,9 +7,28 @@ $(document).ready(function () {
   var timerID = $("#time");
   var feedbackElement = $("#feedback");
   var scoreElement = $("#final-score");
+  var questionCounter = $('#question-counter')
+  var score = 0;
+  var btnSubmitResults = $('#btn-initials')
+  var resInput = $('#input-initials')
+  var highScores = JSON.parse(localStorage.getItem('highScores') || '[]')
+  var highScoresTable = $('#high-scores')
+  var hsPanel = $('#hs')
+
 
   initialPage.show();
   questionPage.hide();
+
+
+  
+  if(highScores.length === 0) {
+    hsPanel.hide()
+  }
+
+  
+  highScores.forEach(value => {
+    highScoresTable.append($("<li>").text(value));
+  })
 
   // load questions from file
   var currentQuestionIndex = 0;
@@ -21,6 +40,7 @@ $(document).ready(function () {
       timerID.text(time);
       if (time <= 0) {
         clearInterval(timerInterval);
+        quizEnd()
       }
     }, 1000);
   }
@@ -37,7 +57,28 @@ $(document).ready(function () {
     showQuestion(currentQuestionIndex, choices);
   });
 
+  btnSubmitResults.on("click", function () {
+    var initials = resInput.val().trim()
+    if(!initials.length) {
+      alert('please enter your initials')
+      return;
+    }
+
+    highScores.push(initials + '-' + score)
+
+    localStorage.setItem('highScores', JSON.stringify(highScores))
+
+    alert('Your score is now saved :)')
+
+    document.location.href = '/'
+    
+  });
+
   function showQuestion(index, choices) {
+    questionCounter.text((index + 1) + " / " + questions.length )
+    
+    feedbackElement.text("");
+
     // get current question object from array
     var currentQuestion = questions[index];
 
@@ -65,19 +106,18 @@ $(document).ready(function () {
   }
 
   function questionClick() {
+    // disable buttons
+    $('#choices > button').attr("disabled", true)
+
     // verify if correct answer selected
     if (this.value !== questions[currentQuestionIndex].answer) {
       // deducts time if incorrect
       time -= 15;
-
-      if (time < 0) {
-        time = 0;
-        quizEnd();
-      }
       // display new time on page
       timerID.text(time);
       feedbackElement.text("Wrong!");
     } else {
+      score += 1
       feedbackElement.text("Correct!");
     }
 
@@ -102,7 +142,7 @@ $(document).ready(function () {
     $("#score-page").removeClass("hide");
     $("#score-page").show();
 
-    var score = time;
+    score = (questions.length / score).toFixed(2)
 
     // display score
     scoreElement.text(score);
