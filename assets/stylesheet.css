@@ -1,15 +1,55 @@
 #start-page, #questions-page, #score-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
 
-  button {
-    background-color: purple;
-    color: white;
-  }
+button {
+  background-color: purple;
+  padding: 1rem;
+  font-size: 20px;
+  color: white;
+}
+
+.timer {
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+#time {
+  font-weight: 800;
+}
   
+.hide {
+  display: none !important;
+}
+
+#input-initials {
+  font-size: 20px;
+  padding: 3px;
+  width: 70%;
+}
+
+#btn-initials {
+  width: 30%;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+#high-scores {
+  list-style: none;
+  text-align: left;
+}
+
+#hs {
+  padding: 10px;
+  background-color: lightblue;
+}
