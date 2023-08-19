@@ -9,8 +9,8 @@
     <title>Coding Quiz Challenge</title>
     </head>
     <body>
-        <div class="timer">Time: <span id="time">0</span></div>
-
+        
+        <div class="timer">⏰ Time: <span id="time">60</span></div>
         <!-------Start page---->
         <div id="start-page" class="start">
             <h1>Coding Quiz Challenge!</h1>
@@ -19,24 +19,35 @@
                 by ten seconds!
             </p>
             <button id="button-start"><h4>Start Quiz</h4></button>
+
+            <hr>
+
+            <div id="hs">
+                <h5 class="hs-title">High Scores</h5>
+                <ul id="high-scores">
+            </div>
+            </ul>
         </div>
 
         <!-----Quiz Page------>
-     <div id="questions-page" class="hide">
-        <h2 id="question-title"></h2>
-        <div id="choices" class="choices"></div>
-        <br>
-        <div id="feedback">Correct!</div>
-      </div>
+        <div id="questions-page" class="hide">
+            <h3>Question <span id="question-counter"></span> </h2>
+            <h2 id="question-title"></h2>
+            <div id="choices" class="choices"></div>
+            <br>
+            <div id="feedback"></div>
+        </div>
 
 
-        <!---------Initials page----------->
-        <div id="initial-page" class="hide">
+        <!---------Score page----------->
+        <div id="score-page" class="hide">
             <h1>All done!</h1>
-            <p>Your final score is <span id="final-score"></span></p>
-            <label for="initials">Enter initials:</label>
-            <input id="input-initials">
-            <button type="submit" id="btn-initials">Submit</button>
+            <h3>Your final score is <span id="final-score"></span></h3>
+            <h4 for="initials">Enter initials:</h4>
+            <div class="flex">
+                <input id="input-initials" placeholder="ex. AC">
+                <button type="submit" id="btn-initials">Submit</button>
+            </div>
         </div>
 
 
